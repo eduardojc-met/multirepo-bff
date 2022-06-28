@@ -974,47 +974,7 @@
                             </execution>
                         </executions>
                     </plugin>
-                    <plugin>
-                        <groupId>com.github.eirslett</groupId>
-                        <artifactId>frontend-maven-plugin</artifactId>
-                        <executions>
-                            <execution>
-                                <id>install-node-and-npm</id>
-                                <goals>
-                                    <goal>install-node-and-npm</goal>
-                                </goals>
-                                <configuration>
-                                    <nodeVersion>${node.version}</nodeVersion>
-                                    <npmVersion>${npm.version}</npmVersion>
-                                    <npmDownloadRoot>https://nexusmaster.alm.europe.cloudcenter.corp/repository/scq-iac-snapshots/SCF/npm/</npmDownloadRoot>
-                                    <nodeDownloadRoot>https://nexusmaster.alm.europe.cloudcenter.corp/repository/scq-iac-snapshots/SCF/npmjs.org-proxy/</nodeDownloadRoot>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>npm install</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <configuration>
-                                    <arguments>install --force</arguments>
-                                </configuration>
-                            </execution>
-                            <execution>
-                                <id>webapp build dev</id>
-                                <goals>
-                                    <goal>npm</goal>
-                                </goals>
-                                <phase>generate-resources</phase>
-                                <configuration>
-                                    <arguments>run webapp:build</arguments>
-                                    <environmentVariables>
-                                        <APP_VERSION>${project.version}</APP_VERSION>
-                                    </environmentVariables>
-                                    <npmInheritsProxyConfigFromMaven>false</npmInheritsProxyConfigFromMaven>
-                                </configuration>
-                            </execution>
-                        </executions>
-                    </plugin>
+ 
                 </plugins>
             </build>
             <properties>
